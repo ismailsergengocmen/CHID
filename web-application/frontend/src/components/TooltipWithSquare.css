@@ -1,0 +1,27 @@
+.square {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.a {
+  background-color: #245e26;
+}
+
+.b {
+  background-color: #4caf50;
+}
+
+.c {
+  background-color: #fbc02d;
+}
+
+.d {
+  background-color: #ed6c03;
+}
+
+.e {
+  background-color: #d3302f;
+}

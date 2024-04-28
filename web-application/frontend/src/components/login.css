@@ -1,0 +1,149 @@
+/* * {
+    margin: 300;
+    box-sizing: border-box;
+    box-align: center;
+    font-family: Verdana, Tahoma, sans-serif;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+} */
+
+.page {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	text-align: center;
+}
+
+.cover {
+	background-color: white;
+	width: 30em;
+	height: 30em;
+	position: relative;
+	text-align: center;
+	border-radius: 1em;
+	box-shadow: 0 0.188em 1.55em rgb(100, 100, 100);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	align-self: center;
+	justify-content: space-around;
+	box-align: center;
+	margin-top: 10vmin;
+	margin-left: 60vmin;
+}
+
+input {
+	border: none;
+	background-color: rgb(229, 226, 226);
+	height: 4em;
+	width: 80%;
+	border-radius: 0.25em;
+	text-align: center;
+	padding: 2em;
+}
+
+.login-btn {
+	width: 40%;
+	height: 3em;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	border-radius: 1em;
+	cursor: pointer;
+	margin-bottom: 3vmin;
+}
+
+.email {
+	width: 90%;
+	height: 3em;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	border-radius: 0.25em;
+	margin-top: 3vmin;
+}
+
+.password {
+	width: 90%;
+	height: 3em;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	border-radius: 0.25em;
+	margin-bottom: 3vmin;
+}
+
+img {
+	width: 50px;
+	height: 50px;
+	background-color: darkgray;
+	align-content: left;
+}
+
+.github-login {
+	width: 70%;
+	height: 3em;
+	background-color: black;
+	box-shadow: black;
+	display: flex;
+	border-radius: 0.25em;
+	text-align: right;
+	margin-top: 5vmin;
+	text-align: center;
+}
+
+.githubText {
+	width: 90%;
+	height: 2em;
+	background-color: black;
+	box-shadow: black;
+	display: flex;
+	border-radius: 0.25em;
+	text-align: right;
+	margin-top: 0vmin;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin-right: 4vmin;
+}
+
+.login-btn:hover {
+	transform: scale(1.25);
+}
+
+.text {
+	position: relative;
+	bottom: 1em;
+}
+
+.hide {
+	position: fixed;
+	transform: scale(0);
+}
+
+.login-popup {
+	position: absolute;
+	height: 30em;
+	width: 30em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25em;
+	background-color: black;
+	color: white;
+	bottom: 0;
+	transform: scale(1);
+	transform: 0.5s;
+}

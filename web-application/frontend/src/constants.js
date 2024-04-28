@@ -1,0 +1,2 @@
+export const USER_INFO_REMOVE = 'USER_INFO_REMOVE';
+export const USER_INFO_FETCH = 'USER_INFO_FETCH';
