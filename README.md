@@ -22,21 +22,37 @@ This package contains resources used in "Enhanced Code Reviews Using Pull Reques
 2. Create a mongoDB cluster in [MongoDB website](https://mongodb.com) and get the cluster url by following the instructions.
 3. Download neo4j desktop application in [neo4j website](https://neo4j.com/download). After downloading the application, create a neo4j database with two following plugins added:
 - Graph Data Science Library 2.3.2
-- APOC 5.3.0 
+- APOC 5.3.0
+4. Create a Firebase Storage Project in [Firebase website](https://firebase.google.com/docs/storage). After creating a project, go to the project settings and save the project ID. After this step, click on the service accounts tab in the settings and click on generate new private key button. This will generate and download a configuration file. Rename this file as `firebase-adminsdk.json`. This file should have the following fields:
+```
+"type": "service_account",
+"project_id": "",
+"private_key_id": "",
+"private_key": "",
+"client_email": "",
+"client_id": "",
+"auth_uri": "",
+"token_uri": "",
+"auth_provider_x509_cert_url": "",
+"client_x509_cert_url": "",
+"universe_domain": ""
+``` 
 
 ### Run steps
 
-Follow the steps in given order.
+Follow the steps in the given order.
 
 **For Call Graph Server**
-1. Add the your neo4j configurations to `src/main/resources/application.properties`. There should be three properties named `NEO4J_URI`, `USERNAME`, and `PASSWORD`. These configuration information should match with the neo4j database that you opened in the previous step. An example configuration can be seen below:  
-`
-NEO4J_URI= "bolt://localhost:7687"
-USERNAME = "neo4j"
-PASSWORD = "44e7d90c807a13a4817fb8c12ab0b6ce5af62741"
-`
-2. Download dependencies using `mvn clean install`
-3. Run the server using `mvn spring-boot:run`
+1. Add the your neo4j configurations to `src/main/resources/application.properties`. There should be four properties named `neo4j.uri`, `neo4j.username`, `neo4j.password`, and `firebase.projectId`. The first three of these configuration information should match with the neo4j database that you opened in the previous step, and the last one should be a valid Firebase storage project ID. An example configuration can be seen below:  
+``` 
+neo4j.uri=bolt://localhost:7687
+neo4j.username=neo4j
+neo4j.password=44e7d90c807a13a4817fb8c12ab0b6ce5af62741
+firebase.projectId=change-impact-detector-xyzab
+```
+3. Put the previously generated `firebase-adminsdk.json` file under `src/main/resources/` 
+4. Download dependencies using `mvn clean install`
+5. Run the server using `mvn spring-boot:run`
 
 **For Website**
 1. Access ChangeImpactDetector/frontend directory using `cd ChangeImpactDetector/frontend` in root repo.
