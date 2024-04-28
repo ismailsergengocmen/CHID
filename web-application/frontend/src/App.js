@@ -17,15 +17,6 @@ import BranchSummary from './pages/BranchSummary';
 import ProjectSettings from './pages/ProjectSettings';
 import Page404 from './pages/Page404';
 
-import {
-	branchInfo,
-	repoInfo,
-	pullRequestBasicInfo,
-	adminRepoInfos,
-	feedback,
-	projects,
-} from './data.js';
-
 const theme = createTheme({
 	palette: {
 		primary: {
@@ -45,20 +36,19 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Navigate replace to='/login' />} />
 					<Route path='/login' element={<Login />} />
-					<Route path='/myProjects' element={<MyProjects projects={projects} />} />
-					<Route path='/createProject' element={<CreateProject projects={projects} />} />
+					<Route path='/myProjects' element={<MyProjects />} />
+					<Route path='/createProject' element={<CreateProject />} />
 					<Route path='/repositories/:repoID' element={<Bars isOverview={true} />}>
-						<Route path='overview' element={<Overview repoInfo={repoInfo} />} />
-						<Route path='overview/activity' element={<Activity info={branchInfo} />} />
+						<Route path='overview' element={<Overview />} />
+						<Route path='overview/activity' element={<Activity />} />
 						<Route path='pullRequests' element={<PullRequests />} />
 						<Route path='settings' element={<Navigate to='analysisMetrics' />} />
 						<Route path='settings/*' element={<ProjectSettings />} />
-						<Route path='branchSummary' element={<BranchSummary branchInfo={branchInfo} />} />
 					</Route>
 					<Route path='/repositories/:repoID/pullRequests/:prNumber' element={<Bars isOverview={false} />}>
 						<Route path='measures' element={<Navigate to='codeChurn' />} />
-						<Route path='measures/*' element={<Measures info={pullRequestBasicInfo} />} />
-						<Route path='impact' element={<Impact barInfo={pullRequestBasicInfo} />} />
+						<Route path='measures/*' element={<Measures />} />
+						<Route path='impact' element={<Impact />} />
 						<Route
 							path='pullRequestSummary'
 							element={
@@ -66,8 +56,6 @@ function App() {
 							}
 						/>
 					</Route>
-					<Route path='adminRepos' element={<AdminProjects adminRepoInfos={adminRepoInfos} />} />
-					<Route path='adminFeedbacks' element={<AdminFeedback feedback={feedback} />} />
 					<Route path="*" element={<Page404/>} />
 				</Routes>
 			</BrowserRouter>
